@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Edit Profile</h2>
+  <form method="post" enctype="multipart/form-data">
+    Name: <input name="name" value="{{ current_user.name or ''}}"><br>
+    Phone: <input name="phone" value="{{ current_user.phone or ''}}"><br>
+    Whatsapp: <input name="whatsapp" value="{{ current_user.whatsapp or ''}}"><br>
+    Email (public): <input name="email_public" value="{{ current_user.email_public or ''}}"><br>
+    Address: <input name="address" value="{{ current_user.address or ''}}"><br>
+    City: <input name="city" value="{{ current_user.city or ''}}"><br>
+    Hospital: <input name="hospital" value="{{ current_user.hospital or ''}}"><br>
+    Experience: <input name="experience" value="{{ current_user.experience or ''}}"><br>
+    License No: <input name="license_no" value="{{ current_user.license_no or ''}}"><br>
+    Specialization: <input name="specialization" value="{{ current_user.specialization or ''}}"><br>
+    Instagram: <input name="instagram" value="{{ current_user.instagram or ''}}"><br>
+    Twitter: <input name="twitter" value="{{ current_user.twitter or ''}}"><br>
+    Facebook: <input name="facebook" value="{{ current_user.facebook or ''}}"><br>
+    YouTube: <input name="youtube" value="{{ current_user.youtube or ''}}"><br>
+    Telegram: <input name="telegram" value="{{ current_user.telegram or ''}}"><br>
+    Profile Image: <input type="file" name="profile_image"><br>
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}

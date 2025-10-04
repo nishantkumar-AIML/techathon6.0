@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Search Providers</h2>
+  <form method="post">
+    Name: <input name="q" value="{{ request.form.q or request.args.get('q','') }}"> 
+    Department: <input name="dept" value="{{ request.form.dept or '' }}">
+    <button type="submit">Search</button>
+  </form>
+  <hr>
+  {% if results %}
+    <h3>Results</h3>
+    <ul>
+    {% for r in results %}
+      <li>
+        <img src="{{ r.image }}" width="80"> 
+        <a href="{{ url_for('profile', user_id=r.id) }}">{{ r.name }}</a> - {{ r.specialization }} - {{ r.city }} - {{ r.phone }}
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endblock %}

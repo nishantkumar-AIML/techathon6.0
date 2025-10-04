@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <form id="loginForm" class="card" autocomplete="on" novalidate>
+      <h1>Sign in</h1>
+      <div class="field">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" required autocomplete="username" />
+        <div class="error" id="usernameError" aria-live="polite"></div>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required autocomplete="current-password" />
+        <div class="error" id="passwordError" aria-live="polite"></div>
+      </div>
+      <div class="field remember">
+        <label><input id="remember" name="remember" type="checkbox" /> Remember me</label>
+      </div>
+      <button type="submit" id="submitBtn">Sign in</button>
+      <div class="message" id="message" aria-live="polite"></div>
+      <p class="small">New here? <a href="register.html">Create an account</a></p>
+    </form>
+  </main>
+  <script src="script.js" defer></script>
+</body>
+</html>

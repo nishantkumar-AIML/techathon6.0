@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <form id="registerForm" class="card" autocomplete="on" novalidate>
+      <h1>Create account</h1>
+      <div class="field">
+        <label for="regUsername">Username</label>
+        <input id="regUsername" name="username" type="text" required autocomplete="username" />
+        <div class="error" id="regUsernameError" aria-live="polite"></div>
+      </div>
+      <div class="field">
+        <label for="regPassword">Password</label>
+        <input id="regPassword" name="password" type="password" required autocomplete="new-password" />
+        <div class="error" id="regPasswordError" aria-live="polite"></div>
+      </div>
+      <button type="submit">Register</button>
+      <div class="message" id="regMessage" aria-live="polite"></div>
+      <p class="small">Already have an account? <a href="index.html">Sign in</a></p>
+    </form>
+  </main>
+  <script src="register.js" defer></script>
+</body>
+</html>

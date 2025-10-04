@@ -1,0 +1,37 @@
+/* Simple, responsive login card */
+:root{
+  --bg:#f4f7fb;
+  --card:#fff;
+  --accent:#2563eb;
+  --muted:#6b7280;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;
+  background:linear-gradient(180deg,var(--bg),#e9eef8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.container{width:100%;max-width:420px;padding:24px}
+.card{
+  background:var(--card);
+  border-radius:12px;
+  padding:28px;
+  box-shadow:0 6px 18px rgba(12,38,75,0.08);
+}
+h1{margin:0 0 18px 0;font-size:20px}
+.field{margin-bottom:12px}
+label{display:block;margin-bottom:6px;color:var(--muted);font-size:13px}
+input[type=text],input[type=password]{
+  width:100%;padding:10px 12px;border-radius:8px;border:1px solid #d1d5db;font-size:15px
+}
+.remember{display:flex;align-items:center}
+button{width:100%;padding:10px 12px;border-radius:8px;border:0;background:var(--accent);color:white;font-weight:600;font-size:15px}
+.error{color:#b91c1c;font-size:13px;height:18px;margin-top:6px}
+.message{margin-top:12px;font-size:14px;height:18px}
+.message.success{color:#065f46}
+.message.error{color:#b91c1c}
+@media (max-width:420px){.card{padding:20px}}

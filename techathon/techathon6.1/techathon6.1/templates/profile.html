@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Profile: {{ prof.name or prof.email }}</h2>
+  {% if prof.profile_image %}
+    <img src="/{{ prof.profile_image }}" width="150" alt="profile">
+  {% endif %}
+  <p><strong>Phone:</strong> {{ prof.phone }}</p>
+  <p><strong>Email (public):</strong> {{ prof.email_public }}</p>
+  <p><strong>Hospital:</strong> {{ prof.hospital }}</p>
+  <p><strong>City:</strong> {{ prof.city }}</p>
+  <p><strong>Specialization:</strong> {{ prof.specialization }}</p>
+  <p><strong>License No:</strong> {{ prof.license_no }}</p>
+  <p><strong>Experience:</strong> {{ prof.experience }}</p>
+  <h3>External Aggregated Info</h3>
+  <p><strong>Confidence:</strong> {{ confidence }}%</p>
+  <p><strong>Sources Found:</strong> {{ external.sources_found }}</p>
+  <h4>Social (mock):</h4>
+  <ul>
+    {% for k,v in external.social.items() %}
+      <li>{{ k }}: followers {{ v.followers }} - latest: {{ v.latest_posts[0] }}</li>
+    {% else %}
+      <li>No social profiles found</li>
+    {% endfor %}
+  </ul>
+  <h4>Recent News (mock):</h4>
+  <ul>
+    {% for n in external.news %}
+      <li>{{ n }}</li>
+    {% else %}
+      <li>No news found</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Welcome {% if current_user.name %}{{ current_user.name }}{% else %}{{ current_user.email }}{% endif %}</h2>
+  <p>Role: {{ current_user.role }}</p>
+  <p>Use the <a href="{{ url_for('search') }}">Search</a> to find providers. If you are a doctor, update your profile <a href='{{ url_for('edit_profile') }}'>here</a>.</p>
+{% endblock %}
